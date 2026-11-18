@@ -1,0 +1,105 @@
+/* Extended from the lab jokes.css: original selectors kept, restyled for the film theme. */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+:root {
+    --ink: #1d2330;
+    --nav: #2b3345;
+    --tomato: #b3200a;      /* Fresh */
+    --rotten: #3d6b1f;      /* Rotten */
+    --paper: #f7f7f7;
+    --card: #ffffff;
+    --line: #d4d4d4;
+    --muted: #555555;
+    --focus: #0b57d0;
+}
+
+body {font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 1.05em; line-height: 1.5; background-color: var(--paper); color: #1a1a1a;}
+h1, h2, h3 {font-family: Georgia, "Times New Roman", serif; line-height: 1.2;}
+h2 {margin-bottom: 0.6em; font-size: 1.7em;}
+h3 {font-size: 1.15em; margin-bottom: 0.2em;}
+p {margin-bottom: 1em;}
+a {color: var(--tomato);}
+
+:focus-visible {outline: 3px solid var(--focus); outline-offset: 2px;}
+
+.skip-link {position: absolute; left: -999px; top: 0; background: #fff; color: #000; padding: 0.6em 1em; z-index: 10;}
+.skip-link:focus {left: 1em; top: 1em;}
+
+header {display: block; background-color: var(--ink); padding: 20px 0; border-bottom: 5px solid var(--tomato);}
+h1 {font-weight: normal; padding: 0.4em 0 0; color: white; text-shadow: 1px 1px 0 #000; width: 92%; max-width: 1000px; margin: auto; font-size: 2.4em;}
+.tagline {color: #e6e6e6; width: 92%; max-width: 1000px; margin: 0 auto; padding-bottom: 0.4em;}
+
+nav {background-color: var(--nav);}
+nav a {color: white; text-decoration: none; display: block; padding: 1em 1.2em;}
+nav a:hover {color: #fff; background-color: var(--ink);}
+nav ul {display: flex; flex-wrap: wrap; width: 92%; max-width: 1000px; margin: auto; list-style: none;}
+nav li {text-align: center;}
+
+main {min-height: 40vh; width: 92%; max-width: 1000px; margin: auto; padding: 24px 0;}
+
+footer {padding: 1em; background-color: #FFC9A7; font-size: 0.8em; text-align: center; color: #222;}
+
+/* Forms */
+.field {margin-bottom: 1.1em;}
+label {display: block; font-weight: 600; margin-bottom: 0.3em;}
+input, select, textarea {width: 100%; max-width: 36em; padding: 0.6em; font: inherit; border: 1px solid #767676; border-radius: 4px; background: #fff;}
+textarea {min-height: 9em;}
+input[type="file"] {border: none; padding: 0.3em 0;}
+input[type="checkbox"] {width: auto; margin-right: 0.5em;}
+.check {display: flex; align-items: center;}
+.check label {display: inline; margin: 0; font-weight: normal;}
+.hint {font-size: 0.85em; color: var(--muted); margin: 0.3em 0 0;}
+form {display: block;}
+
+.button, button {display: inline-block; font: inherit; font-weight: 600; padding: 0.55em 1.2em; border: 2px solid var(--tomato); background: var(--tomato); color: #fff; border-radius: 4px; cursor: pointer; text-decoration: none; margin-right: 0.4em;}
+.button:hover, button:hover {background: #8f1907; border-color: #8f1907;}
+.button.secondary {background: #fff; color: var(--tomato);}
+.button.secondary:hover {background: #fbeae6;}
+button.danger {background: #fff; color: #8f1907; border-color: #8f1907; margin-right: 0;}
+button.danger:hover {background: #fbeae6;}
+
+.errors {padding: 1em; border: 1px solid #b00020; background-color: lightyellow; color: #8a0019; margin-bottom: 1em; overflow: auto;}
+.errors ul {margin-left: 1.5em;}
+.notice {padding: 1em; border: 1px solid var(--rotten); background-color: #eef7e8; color: #1f3d0e; margin-bottom: 1em;}
+
+.filter {display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-end; margin-bottom: 1em;}
+.filter .field {margin-bottom: 0;}
+.filter input, .filter select {width: 14em;}
+
+/* Film cards */
+.filmgrid {display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 1.2em;}
+.filmcard {display: flex; background: var(--card); border: 1px solid var(--line); border-radius: 6px; overflow: hidden;}
+.poster {flex: 0 0 120px; background: #d8d8d8;}
+.poster img {display: block; width: 100%; height: 100%; object-fit: cover;}
+.noposter {display: flex; align-items: center; justify-content: center; height: 100%; min-height: 180px; font-size: 0.85em; color: #333;}
+.filmbody {padding: 1em; flex: 1; min-width: 0;}
+.year {font-weight: normal; color: var(--muted);}
+.meta {font-size: 0.85em; color: var(--muted); margin-bottom: 0.6em;}
+
+/* Original blockquote rules, adapted for review text */
+blockquote {margin-bottom: 1em; border-left: 4px solid var(--line); padding: 0.2em 0 0.2em 0.8em;}
+blockquote p {margin-bottom: 0;}
+
+.score {display: flex; align-items: center; gap: 0.5em; font-weight: 700; margin-bottom: 0.4em;}
+.scorenum {display: inline-block; min-width: 3.6em; padding: 0.15em 0.6em; border-radius: 2em; color: #fff; text-align: center; font-size: 1.1em;}
+.fresh .scorenum {background: var(--tomato);}
+.rotten .scorenum {background: var(--rotten);}
+.fresh .scorelabel {color: var(--tomato);}
+.rotten .scorelabel {color: var(--rotten);}
+
+.actions {display: flex; gap: 0.6em; align-items: center;}
+.actions .button, .actions button {padding: 0.35em 0.9em; font-size: 0.9em;}
+
+.hero {border-left: 8px solid var(--tomato); padding: 0.4em 0 0.4em 1em; margin-bottom: 2em;}
+.hero h2 {font-size: 2.2em;}
+.currentposter {max-width: 120px; height: auto; border: 1px solid var(--line);}
+
+.currentpage:before {content: "[";}
+.currentpage:after {content: "]";}
+
+@media (max-width: 480px) {
+    h1 {font-size: 1.8em;}
+    .filmcard {flex-direction: column;}
+    .poster {flex-basis: auto; max-height: 220px;}
+    nav li {flex: 1 1 50%;}
+}
