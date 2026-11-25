@@ -1,5 +1,6 @@
 <?php
 require 'includes/functions.php';
+requireLogin();
 try {
     include 'includes/DatabaseConnection.php';
 

@@ -1,6 +1,7 @@
 <?php
 // Function library: small named helpers plus generic reusable ones.
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/auth.php';
 
 /** Escape text for safe output in HTML. */
 function h($text)
